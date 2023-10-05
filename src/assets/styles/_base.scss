@@ -1,0 +1,74 @@
+@font-face {
+   font-family: "Heebo";
+   src: url("../fonts/Heebo-Regular.woff2") format("woff2");
+   font-weight: 400;
+   font-display: swap;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Heebo";
+   src: url("../fonts/Heebo-Medium.woff2") format("woff2");
+   font-weight: 500;
+   font-display: swap;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Heebo";
+   src: url("../fonts/Heebo-Bold.woff2") format("woff2");
+   font-weight: 700;
+   font-display: swap;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: "Heebo";
+   src: url("../fonts/Heebo-Black.woff2") format("woff2");
+   font-weight: 900;
+   font-display: swap;
+   font-style: normal;
+}
+
+body {
+   font-family: "Heebo", sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: normal;
+   color: $general-text-color;
+   background: $main-color;
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   overflow: hidden;
+}
+
+.footer {
+   margin-top: auto;
+ }
+
+.top-container {
+   max-width: 974px;
+   margin: 0px auto;
+   padding: 0px 18px;
+}
+
+.main__container {
+   max-width: 885px;
+   margin: 0px auto;
+   padding: 0px 18px;
+}
+
+a:hover {
+   color: $primary-color; 
+   transition: color 0.3s ease;    
+ }
+
+ a:active {
+   color: $primary-color;
+ }
+
+ 
