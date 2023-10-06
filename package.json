@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
 
-  "homepage": "https://mike-oc24.github.io/Portfolio-on-vue/",
+  //"homepage": "https://mike-oc24.github.io/Portfolio-on-vue/",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
