@@ -6,7 +6,7 @@ import blog from '../views/blog.vue'
 import viewAll from '../views/blog.vue'
 
 const router = createRouter({
-   history: createWebHistory(),
+   history: createWebHistory(import.meta.env.BASE_URL),
    routes: [
       {
          name: 'home',
