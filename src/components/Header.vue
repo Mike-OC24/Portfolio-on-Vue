@@ -24,34 +24,26 @@ const isOpenedBurgerMenu = ref(false);
 <template>
    <header class="header">
       <div class="header__container top-container">
+
          <div class="header__burger-menu" @click="isOpenedBurgerMenu = !isOpenedBurgerMenu">
             <img src="../assets/img/burger-icon.svg" alt="burger-icon" class="header__burger-icon" />
-
             <nav class="header__burger-nav burger-nav" v-if="isOpenedBurgerMenu">
-               <router-link :to="element.path" class="burger-nav__link" v-for="element of  menu">{{
-                  element.name }}</router-link>
-               <!--   <ul class="burger-nav__list">
-                  <li class="burger-nav__item"><router-link to="/" class="burger-nav__link">home</router-link></li>
-                  <li class="burger-nav__item"><router-link to="/works" class="burger-nav__link">works</router-link></li>
-                  <li class="burger-nav__item"><router-link to="/blog" class="burger-nav__link">blog</router-link></li>
+               <ul class="burger-nav__list">
+                  <li class="burger-nav__item" v-for="item of menu">
+                     <router-link :to="item.path" class="burger-nav__link">{{ item.name }}</router-link>
                   </li>
-               </ul>-->
+               </ul>
             </nav>
          </div>
 
-         <nav class="header__nav">
-            <router-link :to="element.path" class="header__nav-link" v-for="element of menu">{{ element.name
-            }}</router-link>
-         </nav>
-
-         <!--<nav class="header__nav nav ">
+         <nav class="header__nav nav ">
             <ul class="nav__list">
-               <li class="nav__item"><router-link :to="element.path" class="nav__link" v-for="element of menu">{{
-                  element.name }}</router-link></li>
-               <li class="nav__item"><router-link to="/works" class="nav__link">works</router-link></li>
-               <li class="nav__item"><router-link to="/blog" class="nav__link">blog</router-link></li>
+               <li class="nav__item" v-for="item of menu">
+                  <router-link :to="item.path" class="nav__link">{{ item.name }}</router-link>
+               </li>
             </ul>
-         </nav>-->
+         </nav>
+         
       </div>
    </header>
 </template>
@@ -60,6 +52,7 @@ const isOpenedBurgerMenu = ref(false);
 @import '../assets/styles/main.scss';
 
 .header__container {
+   position: relative;
    min-height: 48px;
    display: flex;
    align-items: end;
@@ -71,7 +64,13 @@ const isOpenedBurgerMenu = ref(false);
    }
 }
 
-.header__nav {
+@media screen and (max-width: 575px) {
+   .header__nav {
+      display: none;
+   }
+}
+
+.nav__list {
    display: flex;
    text-transform: capitalize;
    font-size: 20px;
@@ -79,21 +78,13 @@ const isOpenedBurgerMenu = ref(false);
    color: #000;
 }
 
-.header__nav-link:not(:last-child) {
+.nav__item:not(:last-child) {
    margin-right: 33px;
 }
 
-/*.nav__list {
-   display: flex;
-   text-transform: capitalize;
-   font-size: 20px;
-   font-weight: 500;
-   color: #000;
-}*/
-
-/*.nav__item:not(:last-child) {
-      margin-right: 33px;
-   }*/
+.nav__link.router-link-active {
+   color: $primary-color;
+}
 
 .header__burger-menu {
    display: none;
@@ -121,12 +112,6 @@ const isOpenedBurgerMenu = ref(false);
 
    &:hover {
       background: rgba(0, 0, 0, 0.04);
-   }
-}
-
-@media screen and (max-width: 575px) {
-   .header__nav {
-      display: none;
    }
 }
 </style>

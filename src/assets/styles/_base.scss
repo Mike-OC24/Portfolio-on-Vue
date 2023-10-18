@@ -48,7 +48,7 @@ body {
 
 .footer {
    margin-top: auto;
- }
+}
 
 .top-container {
    max-width: 974px;
@@ -63,12 +63,6 @@ body {
 }
 
 a:hover {
-   color: $primary-color; 
-   transition: color 0.3s ease;    
- }
-
- a:active {
    color: $primary-color;
- }
-
- 
+   transition: color 0.3s ease;
+}
